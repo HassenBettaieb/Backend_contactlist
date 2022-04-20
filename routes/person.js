@@ -32,7 +32,7 @@ route.put("/editperson/:id", async (req, res) => {
     console.log(error);
   }
 });
-route.delete("/deleteperson/id", async (req, res) => {
+route.delete("/deleteperson/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const person = await Person.findByIdAndDelete(id);
