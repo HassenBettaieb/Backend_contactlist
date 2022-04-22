@@ -23,9 +23,9 @@ route.get("/getperson", async (req, res) => {
 route.put("/editperson/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, age, Email } = req.body;
+    const { name, email, age } = req.body;
     const person = await Person.findByIdAndUpdate(id, {
-      $set: { name, age, Email },
+      $set: { name, age, email },
     });
     res.status(200).send({ person });
   } catch (error) {
@@ -36,7 +36,7 @@ route.delete("/deleteperson/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const person = await Person.findByIdAndDelete(id);
-    res.status.send("deleted");
+    res.status(200).send("deleted");
   } catch (error) {
     console.log(error);
   }

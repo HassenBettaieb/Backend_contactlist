@@ -4,11 +4,11 @@ const newperson = new mongoose.Schema({
     type: String,
   },
 
+  email: {
+    type: String,
+  },
   age: {
     type: Number,
-  },
-  Email: {
-    type: String,
   },
 });
 module.exports = mongoose.model("Person", newperson);

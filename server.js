@@ -4,6 +4,7 @@ const app = express();
 const route = require("./routes/person");
 const port = 6000;
 connectDB();
+
 app.use(express.json());
 app.use("/api", route);
 
